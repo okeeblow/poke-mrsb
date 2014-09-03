@@ -236,15 +236,15 @@ Func_6ad6: ; 6ad6 (1:6ad6)
 	jp CopyData
 IF _RED
 DefaultNamesPlayerList: ; 6af2 (1:6af2)
-	db "NEW NAME@RED@ALLISON@NICOLE@"
+	db "NEW NAME@Red@Allison@Nicole@"
 DefaultNamesRivalList: ; 6b08 (1:6b08)
-	db "NEW NAME@BLUE@RYAN@GARY@"
+	db "NEW NAME@Blue@Ryan@Gary@"
 ENDC
 IF _BLUE
 DefaultNamesPlayerList: ; 6af2 (1:6af2)
-	db "NEW NAME@BLUE@ALLISON@NICOLE@"
+	db "NEW NAME@Blue@Allison@Nicole@"
 DefaultNamesRivalList: ; 6b08 (1:6b08)
-	db "NEW NAME@RED@RYAN@GARY@"
+	db "NEW NAME@Red@Ryan@Gary@"
 ENDC
 
 TextTerminator_6b20: ; 6b20 (1:6b20)
