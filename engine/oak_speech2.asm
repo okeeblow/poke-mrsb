@@ -184,32 +184,32 @@ DisplayIntroNameTextBox: ; 6a6c (1:6a6c)
 IF _RED
 DefaultNamesPlayer: ; 6aa8 (1:6aa8)
 	db   "NEW NAME"
-	next "RED"
-	next "ASH"
-	next "JACK"
+	next "Red"
+	next "Allison"
+	next "Nicole"
 	db   "@"
 
 DefaultNamesRival: ; 6abe (1:6abe)
 	db   "NEW NAME"
-	next "BLUE"
-	next "GARY"
-	next "JOHN"
+	next "Blue"
+	next "Ryan"
+	next "Gary"
 	db   "@"
 ENDC
 
 IF _BLUE
 DefaultNamesPlayer: ; 6aa8 (1:6aa8)
 	db   "NEW NAME"
-	next "BLUE"
-	next "GARY"
-	next "JOHN"
+	next "Blue"
+	next "Allison"
+	next "Nicole"
 	db   "@"
 
 DefaultNamesRival: ; 6abe (1:6abe)
 	db   "NEW NAME"
-	next "RED"
-	next "ASH"
-	next "JACK"
+	next "Red"
+	next "Ryan"
+	next "Gary"
 	db   "@"
 ENDC
 
@@ -236,15 +236,15 @@ Func_6ad6: ; 6ad6 (1:6ad6)
 	jp CopyData
 IF _RED
 DefaultNamesPlayerList: ; 6af2 (1:6af2)
-	db "NEW NAME@RED@ASH@JACK@"
+	db "NEW NAME@RED@ALLISON@NICOLE@"
 DefaultNamesRivalList: ; 6b08 (1:6b08)
-	db "NEW NAME@BLUE@GARY@JOHN@"
+	db "NEW NAME@BLUE@RYAN@GARY@"
 ENDC
 IF _BLUE
 DefaultNamesPlayerList: ; 6af2 (1:6af2)
-	db "NEW NAME@BLUE@GARY@JOHN@"
+	db "NEW NAME@BLUE@ALLISON@NICOLE@"
 DefaultNamesRivalList: ; 6b08 (1:6b08)
-	db "NEW NAME@RED@ASH@JACK@"
+	db "NEW NAME@RED@RYAN@GARY@"
 ENDC
 
 TextTerminator_6b20: ; 6b20 (1:6b20)
