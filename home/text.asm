@@ -122,7 +122,6 @@ PlaceNextChar:: ; 1956 (0:1956)
 	cp $5A
 	jp z,Char5A
 	ld [hli],a
-	call PrintLetterDelay
 Next19E8:: ; 19e8 (0:19e8)
 	inc de
 	jp PlaceNextChar
@@ -352,13 +351,6 @@ Next1B18:: ; 1b18 (0:1b18)
 	dec b
 	jr nz,.next2
 
-	; wait five frames
-	ld b,5
-.WaitFrame
-	call DelayFrame
-	dec b
-	jr nz,.WaitFrame
-
 	ret
 
 ProtectedDelay3:: ; 1b3a (0:1b3a)
@@ -577,7 +569,7 @@ TextCommand0A:: ; 1c1d (0:1c1d)
 	call Joypad
 	ld a,[hJoyHeld]
 	and a,%00000011 ; A and B buttons
-	jr nz,.skipDelay
+	jp .skipDelay
 	ld c,30
 	call DelayFrames
 .skipDelay
@@ -655,7 +647,7 @@ TextCommand0C:: ; 1c78 (0:1c78)
 	pop de
 	ld a,[hJoyHeld] ; joypad state
 	and a,%00000011 ; is A or B button pressed?
-	jr nz,.skipDelay ; if so, skip the delay
+	jp .skipDelay ; if so, skip the delay
 	ld c,10
 	call DelayFrames
 .skipDelay
