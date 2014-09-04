@@ -4498,14 +4498,14 @@ CriticalHitTest: ; 3e023 (f:6023)
 	ld c, [hl]                   ; read move id
 	ld a, [de]
 	bit 2, a                     ; test for focus energy
-	jr nz, .focusEnergyUsed      ; bug: using focus energy causes a shift to the right instead of left,
-	                             ; resulting in 1/4 the usual crit chance
+	jr nz, .focusEnergyUsed      ; bug: using focus energy caused a shift to the right instead of left,
+	                             ; resulting in 1/4 the usual crit chance. Fixed for MR/SB.
 	sla b                        ; (effective (base speed/2)*2)
 	jr nc, .noFocusEnergyUsed
 	ld b, $ff                    ; cap at 255/256
 	jr .noFocusEnergyUsed
 .focusEnergyUsed
-	srl b
+	sla b
 .noFocusEnergyUsed
 	ld hl, HighCriticalMoves      ; table of high critical hit moves
 .Loop
